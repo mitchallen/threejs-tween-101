@@ -22,6 +22,7 @@ Or just browse to: `http://localhost:8000`
 ## Reference
 
 * https://vrmitch.com/demo/threejs-waypoint-vr/src/
+* https://createjs.com/
 
 * * * 
 
