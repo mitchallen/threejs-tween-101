@@ -1,0 +1,13 @@
+{
+  "name": "threejs-tween-101",
+  "version": "1.0.0",
+  "description": "ThreeJS tween demo",
+  "main": "src/index.html",
+  "scripts": {
+    "web-server": "cd src; python -m SimpleHTTPServer $PORT || 8000",
+    "start": "open http://localhost:8000",
+    "inuse": "lsof -i :8000"
+  },
+  "author": "Mitch Allen",
+  "license": "MIT"
+}
