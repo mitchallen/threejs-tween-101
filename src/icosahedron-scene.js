@@ -17,7 +17,6 @@ import {
       spec = spec || {};
       var config = spec.config || {};
       var icosahedrons = config.icosahedrons || [];
-      var rings = config.rings || [];
   
       var speed = 1;
   
@@ -48,13 +47,6 @@ import {
       }
   
       shapeOptions.forEach(options => demoWorld.add(IcosahedronFactory.create(options)));
-  
-      // Add icosahedrons to the demo world group node 
-      // icosahedrons.forEach(options => demoWorld.add(IcosahedronFactory.create(options)));
-  
-      // Add rings of icosahedrons to the demo world group node
-      // rings.forEach(options => demoWorld.add(IcosahedronFactory.createRing(options)));
-  
   
       var points = [
         { x: -1, y: -1, z: 0 },
@@ -146,7 +138,6 @@ import {
       // console.log(h0);
       c0.addEventListener('connected', function (event) {
         console.log('[0] controller connected')
-        // console.log(JSON.stringify(event,null,2));
         console.log(event);
         console.log(`[0] controller connected handedness:\n > ${event.data.handedness}`);
         console.log(`[0] controller connected profiles:\n > ${event.data.profiles}`);
@@ -167,7 +158,6 @@ import {
   
       c1.addEventListener('connected', function (event) {
         console.log('[1] controller connected')
-        // console.log(JSON.stringify(event,null,2));
         console.log(event);
         console.log(`[1] controller connected handedness:\n > ${event.data.handedness}`);
         console.log(`[1] controller connected profiles:\n > ${event.data.profiles}`);
@@ -184,22 +174,18 @@ import {
         console.log(`[0] select`);
         console.log(`[0] handedness:\n > ${event.data.handedness}`);
         console.log(`[0] profiles:\n > ${event.data.profiles}`);
-        // console.log(JSON.stringify(event,null,2));
       });
   
       c1.addEventListener('select', function (event) {
         console.log(`[1] select`);
         console.log(`[1] handedness:\n > ${event.data.handedness}`);
         console.log(`[1] profiles:\n > ${event.data.profiles}`);
-        // console.log(JSON.stringify(event,null,2));
       });
   
       c0.addEventListener('selectstart', function () {
         console.log(`[0] select start ${speed++}`);
       });
       c0.addEventListener('selectend', () => console.log('[0] select end'));
-      // c0.addEventListener('selectstart', onSelectStart);
-      // c0.addEventListener('selectend', onSelectEnd);
       c0.addEventListener('squeezestart', function () {
         console.log(`[0] squeeze start ${speed--}`);
       });
@@ -223,9 +209,6 @@ import {
             }
             if (node.name === "demo") {
               node.rotation.y += 0.005;
-            }
-            if (node.name === "ring") {
-              // node.rotation.y += 0.01;
             }
           });
   
